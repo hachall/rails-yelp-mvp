@@ -1,0 +1,32 @@
+<div class="container">
+  <h1>Restaurants</h1>
+  <div class="row">
+    <% @restaurants.each do |restaurant| %>
+    <div class="col-md-4">
+      <!-- <h3><%= link_to restaurant.name, restaurant_path(restaurant) %></h3>
+      <h4><%= restaurant.category %></h4> -->
+
+      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.1)), url(<%= "#{restaurant.url}?smash=#{(1..5).to_a.shuffle.join}" %>);">
+        <div class="card-category"><%= restaurant.category %></div>
+        <div class="card-description">
+          <h2><%= link_to restaurant.name, restaurant_path(restaurant) %></h2>
+          <p><%= restaurant.address %></p>
+        </div>
+        <!-- <a class="card-link" href="#" ></a> -->
+      </div>
+
+    </div>
+    <% end %>
+
+  </div>
+  <h3><%= link_to 'Add Restaurant', new_restaurant_path %></h3>
+
+</div>
+
+
+
+
+
+
+
+
